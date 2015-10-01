@@ -33,15 +33,14 @@ int main() {
 
     cin >> n;
     
-    int p1, p2, p3, p4;
+    int p1, p2;
 
-    p1 = n / 1000;
-    p2 = n / 100 % 10;
+    p1 = n / 100;
+    p2 = n % 100;
 
-    p3 = n / 10 % 10;
-    p4 = n % 10;
+    p2 = p2 % 10 * 10 + p2 / 10;
 
-    cout << p1 - p3 + p2 - p4 + 1 << endl;
+    cout << (p2 - p1) + 1 << endl;
 
     return 0;
 }
