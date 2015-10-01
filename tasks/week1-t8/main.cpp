@@ -18,15 +18,20 @@ Task:
 
 using namespace std;
 
+int table_count(int st);
+
 int main() {
     int a, b, c;
-    const int p_t = 2;
 
     cin >> a >> b >> c;
-    
-    int sum_p = a + b + c;
 
-    cout << (sum_p + p_t - 1) / p_t << endl;
+    cout << table_count(a) + table_count(b) + table_count(c) << endl;
 
     return 0;
+}
+
+int table_count(int st) {
+    static const int p_t = 2;
+
+    return (st + p_t - 1) / 2;
 }
