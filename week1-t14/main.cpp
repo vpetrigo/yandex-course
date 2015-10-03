@@ -32,7 +32,18 @@ int main() {
     cin >> h >> a >> b;
 
     const int step = a - b;
-
+    // in any cases snail goes up at least one day: d = 1 + ...
+    // if it does not reached the top it will go down for b
+    // do after the first day it will go for (h - a) / (a - b)
+    // (h - a) - the path it did at the first day
+    // (a - b) - snail's speed for the following days
+    // But we also have to deal with remainder
+    // we need to calculate how this remainder part affects our day estimation
+    // for example: H = 15, V_UP = 4, V_DOWN = 1
+    // d = 1 + (15 - 4) / 3 = 1 + 3 = 4 (? wat ?)
+    // (15 - 4) % 3 = 2 <- this is the uncounted path
+    // so we need that remainder to check whether our day calculation will be overflowed
+    // (2 + V_UP - V_DOWN - 1) / (V_UP - V_DOWN) = (2 + 3) / 3 = 1
     d = 1 + (h - a) / step + ((h - a) % step + a - b - 1) / step;
 
     cout << d << endl;
