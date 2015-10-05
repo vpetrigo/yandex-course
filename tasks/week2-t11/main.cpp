@@ -32,9 +32,10 @@ int main() {
     cin >> n >> m >> k;
 
     int square = n * m;
-    int part = square - k;
+    bool enough = k <= square;
+    int rem = square - k;
 
-    if (part >= 0 && part % n == 0 || part % m == 0) {
+    if (enough && (rem % n == 0 || rem % m == 0)) {
         cout << "YES";
     }
     else {
