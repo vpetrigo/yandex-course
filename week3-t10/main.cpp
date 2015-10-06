@@ -31,13 +31,12 @@ int main() {
 
     while (--n) {
         int tmp = f_1;
-        
+
         f_1 += f_0;
         f_0 = tmp;
     }
 
     cout << f_1;
-
 
     return 0;
 }
