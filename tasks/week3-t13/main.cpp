@@ -63,10 +63,9 @@ int main() {
 
     // Option 2
 
-    int next;
-
     if (cin >> prev && prev != 0) {
         if (cin >> cur && cur != 0) {
+            int next;
             if (cin >> next) {
                 while (next != 0) {
                     if (prev < cur && cur > next) {
