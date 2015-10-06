@@ -42,11 +42,11 @@ int main() {
     int s_max = -1;
 
     while (cin >> n && n != 0) {
-        if (max <= n) {
-            s_max = max;
+        if (max < n) {
             max = n;
         }
-        else if (s_max < n) {
+        
+        if (n <= max && s_max < n) {
             s_max = n;
         }
     }
