@@ -46,13 +46,8 @@ int main() {
 
     while (n-- > 0) {
         cin >> coef;
-        if (n % 2 == 1) {
-            res += coef * x;
-        }
-        else {
-            res += coef;
-            res *= x;
-        }
+        res += coef;
+        res *= x;
     }
 
     cin >> coef;
