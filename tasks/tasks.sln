@@ -169,7 +169,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "week7-t1", "..\week7-t1\wee
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "week1", "week1", "{EF865597-F07D-4C0E-B0BC-E3CE1735A99E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Week2", "Week2", "{D6F5BF10-EE56-424C-858D-5DF4CBF85BCE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "week2", "week2", "{D6F5BF10-EE56-424C-858D-5DF4CBF85BCE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "week3", "week3", "{508620CE-AB8A-4134-84CF-9F01FB96CD33}"
 EndProject
@@ -178,6 +178,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "week5", "week5", "{EF055BC4-F6B6-4EE3-9EE0-509B11D80A42}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "week6", "week6", "{94C7AA41-D9E1-4A2B-94BD-B4ABAD22C4B8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "week7-t2", "week7-t2\week7-t2.vcxproj", "{68A5D319-600A-434E-B3A9-2B1F0E20A9BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -843,6 +845,14 @@ Global
 		{486ACD52-FE33-4E47-BBD1-E510B349C218}.Release|x64.Build.0 = Release|x64
 		{486ACD52-FE33-4E47-BBD1-E510B349C218}.Release|x86.ActiveCfg = Release|Win32
 		{486ACD52-FE33-4E47-BBD1-E510B349C218}.Release|x86.Build.0 = Release|Win32
+		{68A5D319-600A-434E-B3A9-2B1F0E20A9BB}.Debug|x64.ActiveCfg = Debug|x64
+		{68A5D319-600A-434E-B3A9-2B1F0E20A9BB}.Debug|x64.Build.0 = Debug|x64
+		{68A5D319-600A-434E-B3A9-2B1F0E20A9BB}.Debug|x86.ActiveCfg = Debug|Win32
+		{68A5D319-600A-434E-B3A9-2B1F0E20A9BB}.Debug|x86.Build.0 = Debug|Win32
+		{68A5D319-600A-434E-B3A9-2B1F0E20A9BB}.Release|x64.ActiveCfg = Release|x64
+		{68A5D319-600A-434E-B3A9-2B1F0E20A9BB}.Release|x64.Build.0 = Release|x64
+		{68A5D319-600A-434E-B3A9-2B1F0E20A9BB}.Release|x86.ActiveCfg = Release|Win32
+		{68A5D319-600A-434E-B3A9-2B1F0E20A9BB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
