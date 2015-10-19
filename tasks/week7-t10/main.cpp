@@ -41,7 +41,8 @@ double fast_pow(double a, int n) {
             res = fast_pow(a * a, n / 2);
         }
         else {
-            res = a * fast_pow(a, n - 1);
+            res = a;
+            res *= fast_pow(a, n - 1);
         }
     }
 
