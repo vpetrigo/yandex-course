@@ -15,7 +15,8 @@ p, и шарик разобъется, то если уронить шарик с этажа номер p+1, то он тоже разоб
 Формат выходных данных
 Требуется вывести наименьшее число бросков, при котором можно всегда решить задачу.
 Примечание
-Комментарий к первому примеру. Нужно бросить шарик со 2-го этажа. Если он разобъется, то бросим второй шарик с 1-го этажа, а если не разобъется - то бросим шарик с 3-го этажа.
+Комментарий к первому примеру. Нужно бросить шарик со 2-го этажа. 
+Если он разобъется, то бросим второй шарик с 1-го этажа, а если не разобъется - то бросим шарик с 3-го этажа.
 
 Подсказки
 1. Как следует действовать, если шарик был бы только один?
@@ -37,24 +38,33 @@ Sample Output 2:
 */
 
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
-int ball_fall(int balls, int step) {
-    if (step == 1 || balls == 1) {
-        return 1;
+int ball_fall(int eggs, int floors) {
+    // if we have only one egg
+    // then we have to check all the floors below
+    if (eggs == 1)
+        return floors;
+
+    // in case only 2 or less floors left
+    // we also have to check all
+    if (floors <= 2)
+        return floors;
+
+    int min_drops = -1;
+    for (int floor = 1; floor < floors; ++floor) {
+        int max_drop_below = ball_fall(eggs - 1, floor - 1);
+        int max_drop_above = ball_fall(eggs, floors - floor);
+        int max_k = max(max_drop_below, max_drop_above);
+
+        if (min_drops == -1 || min_drops > max_k) {
+            min_drops = max_k;
+        }
     }
 
-    return ball_fall(balls - 1, step - 1) + ball_fall(balls, step - 1);
-}
-
-int determine_step(int floor) {
-    int step = 0;
-
-    for (; step * (step + 1) < 2 * floor; ++step) {
-    }
-
-    return step;
+    return min_drops + 1;
 }
 
 int main() {
@@ -62,9 +72,7 @@ int main() {
     int n;
 
     cin >> n;
-
-    int step = determine_step(n);
-    cout << ball_fall(balls, step) << endl;
+    cout << ball_fall(balls, n - 1) << endl;
 
     return 0;
 }
