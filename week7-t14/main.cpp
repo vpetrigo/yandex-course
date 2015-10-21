@@ -28,7 +28,7 @@ using namespace std;
 //Check the condition
 bool promising(const vector<int>& field, int queen_num, int pos) {
     for (int j = 0; j < queen_num; ++j) {
-        // check whether queen lays on the vertical, horizontal or diagnoal lines
+        // check whether a queen intersects with others
         if (field[j] == pos || j - field[j] == queen_num - pos || j + field[j] == queen_num + pos) {
             return false;
         }
