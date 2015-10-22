@@ -25,40 +25,16 @@ Everyone
 
 using namespace std;
 
-string word_size(const string& s, int& pos) {
-    const char space = ' ';
-    int end_of_word = s.find(space, pos);
-
-    if (end_of_word == string::npos) {
-        return string{};
-    }
-
-    string lw{s.begin() + pos, s.begin() + end_of_word};
-
-    pos = end_of_word + 1;
-
-    return lw;
-}
-
 int main() {
-    string inp;
-    int max_len = 0;
-    int pos = 0;
-    string longest_word;
     string word;
+    string longest_word;
 
-    getline(cin, inp);
-
-    longest_word = word_size(inp, pos);
-    word = longest_word;
-    while(!word.empty()) {
-        word = word_size(inp, pos);
-
-        if (word.size() > longest_word.size()) {
+    while (cin >> word) {
+        if (longest_word.empty() || word.size() > longest_word.size()) {
             longest_word = word;
         }
     }
-    
+
     cout << longest_word;
 
     return 0;
