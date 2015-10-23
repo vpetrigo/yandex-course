@@ -64,6 +64,8 @@ Sample Output:
 
 using namespace std;
 
+// put a string to lower case for our dictionary
+// we can use it as a tag
 string to_lower_case(const string& s) {
     string tmp;
 
@@ -79,6 +81,7 @@ string to_lower_case(const string& s) {
     return tmp;
 }
 
+// filling new dictionary
 map<string, vector<string>>& fill_dict(map<string, vector<string>>& d, int n) {
     string word;
     string bookmark;
@@ -102,6 +105,7 @@ void print_dict(const map<string, vector<string>>& dict) {
     }
 }
 
+// check if a word is in a dictionary
 bool in_dict(const vector<string>& dict, const string &word) {
     for (int i = 0; i < dict.size(); ++i) {
         if (word == dict[i]) {
@@ -112,6 +116,7 @@ bool in_dict(const vector<string>& dict, const string &word) {
     return false;
 }
 
+// count accents in a word which are dedicated by upper letters
 int count_upper(const string &s) {
     int cnt = 0;
 
@@ -124,6 +129,7 @@ int count_upper(const string &s) {
     return cnt;
 }
 
+// check essay for right accents in words with using a dictionary
 int check_work(const map<string, vector<string>>& dict) {
     int mistakes = 0;
     string word;
