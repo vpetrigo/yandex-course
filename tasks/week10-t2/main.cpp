@@ -30,33 +30,49 @@ Sample Output:
 
 using namespace std;
 
-int main() {
-    int client_size;
-    int n_boots;
-    vector<int> v;
-    int cnt = 0; // count how much pairs a client can wear up
+void fill_vector(vector<int>& v, const int n) {
+    for (int i = 0; i < n; ++i) {
+        int boots_size;
 
-    cin >> client_size >> n_boots;
+        cin >> boots_size;
+        v.push_back(boots_size);
+    }
+}
 
-    for (int i = 0; i < n_boots; ++i) {
-        int boot_size;
+int pass_small_sizes(const vector<int>& v, const int cl_size) {
+    int pos = 0;
 
-        cin >> boot_size;
-        v.push_back(boot_size);
+    while (pos < v.size() && v[pos] < cl_size) {
+        ++pos;
     }
 
-    vector<int>::const_iterator it = find_if(v.begin(), v.end(), [&](int a) { return client_size <= a; });
-    cout << *it << endl;
-    if (it != v.end()) {
-        client_size = *it;
-        ++cnt;
-        for (vector<int>::const_iterator ait = it + 1; ait != v.end() && client_size + 3 <= *ait; ++ait) {
-            client_size = *ait;
-            ++cnt;
+    return pos;
+}
+
+int main() {
+    int client_size;
+    int boots_num;
+    vector<int> boots_sizes;
+    int max_cnt = 0;
+
+    cin >> client_size >> boots_num;
+    fill_vector(boots_sizes, boots_num);
+    sort(boots_sizes.begin(), boots_sizes.end());
+
+    int start_boot = pass_small_sizes(boots_sizes, client_size);
+
+    if (start_boot != boots_sizes.size()) {
+        ++max_cnt;
+        client_size = boots_sizes[start_boot];
+        for (int i = start_boot + 1; i < boots_sizes.size(); ++i) {
+            if (client_size + 3 <= boots_sizes[i]) {
+                ++max_cnt;
+                client_size = boots_sizes[i];
+            }
         }
     }
 
-    cout << cnt;
+    cout << max_cnt;
 
     return 0;
 }
