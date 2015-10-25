@@ -50,6 +50,7 @@ int pass_small_sizes(const vector<int>& v, const int cl_size) {
 }
 
 int main() {
+    constexpr int boot_size_step = 3;
     int client_size;
     int boots_num;
     vector<int> boots_sizes;
@@ -65,7 +66,7 @@ int main() {
         ++max_cnt;
         client_size = boots_sizes[start_boot];
         for (int i = start_boot + 1; i < boots_sizes.size(); ++i) {
-            if (client_size + 3 <= boots_sizes[i]) {
+            if (client_size + boot_size_step <= boots_sizes[i]) {
                 ++max_cnt;
                 client_size = boots_sizes[i];
             }
