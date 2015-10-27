@@ -30,7 +30,7 @@ int main() {
         int tmp;
 
         cin >> tmp;
-        
+
         if (tmp % 2 == 0) {
             st.push_back(tmp);
         }
