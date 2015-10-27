@@ -44,7 +44,7 @@ int main() {
     // (15 - 4) % 3 = 2 <- this is the uncounted path
     // so we need that remainder to check whether our day calculation will be overflowed
     // (2 + V_UP - V_DOWN - 1) / (V_UP - V_DOWN) = (2 + 3) / 3 = 1
-    d = 1 + (h - a) / step + ((h - a) % step + a - b - 1) / step;
+    d = 1 + (h - a) / step + ((h - a) % step + step - 1) / step;
 
     cout << d << endl;
 
