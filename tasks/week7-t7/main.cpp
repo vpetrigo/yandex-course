@@ -34,7 +34,7 @@ double power(double x, int n) {
         x = 1 / x;
         n = -n;
     }
-    
+
     while (--n >= 0) {
         res *= x;
     }
